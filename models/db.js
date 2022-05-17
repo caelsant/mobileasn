@@ -5,7 +5,7 @@ var banco = new Sequelize(
     "admin",
     "66325489",
     {
-        host: "localhost",
+        host: "ejs-db-2.c1c2ntdfepv4.sa-east-1.rds.amazonaws.com",
         dialect: "mysql",
         define: { timestamps: false }
     }
