@@ -92,6 +92,28 @@ app.get("/end", (req,res) => {
     res.render("finish")
 })
 
+
+//api
+
+app.get("/api/produtos", (req, res) => {
+    tabela.usuarios.findAll().then((element) => {
+        res.json(element)
+    })
+})
+
+app.get("/api/itens", (req, res) => {
+    tabela.itens.findAll().then((element) => {
+        res.json(element)
+    })
+})
+
+app.get("/api/cabecalho", (req, res) => {
+    tabela.cabecalho.findAll().then((element) => {
+        res.json(element)
+    })
+})
+
+
 app.listen(9091, () => {
 	console.log("Conectado: 9091" );
 })
