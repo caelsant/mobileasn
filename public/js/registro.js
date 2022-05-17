@@ -48,7 +48,8 @@ var s = now.getSeconds();
                     var tamanho = data.length;
                     idCabecalho = data[tamanho - 1].codigo + 1;
                     itens(idCabecalho);
- 
+                    apagar()
+
                 })
             }
         })
@@ -90,7 +91,7 @@ var s = now.getSeconds();
                     },
                     error: (error) => {
                         console.log("Feito");
-                        apagar()
+                        window.location.replace("http://15.228.157.169:9091/end")
                     }
                 })
 
