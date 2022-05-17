@@ -5,8 +5,8 @@ const path = require('path');
 const bodyParser = require("body-parser");
 const db = require("./models/db");
 const tables = require("./models/tables")
-const cors = require("cors")
-app.use(cors())
+//const cors = require("cors")
+//app.use(cors())
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
