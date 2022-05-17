@@ -1,22 +1,23 @@
-// ao clicar em salvar primeiro ele vai criar um cabecalho com
- //ID
- //DATA VENDA
- //ID ITEM
- //ID VENDA
- //VALOR
- //VALOR TOTAL
+var now = new Date;
 
+var dia = now.getDate();
+var mes = now.getMonth();
+var ano = now.getFullYear()
+
+var h = now.getHours();
+var m = now.getMinutes();
+var s = now.getSeconds();
     var  idCabecalho = "";
 
     $("#salvar").click(function cabecalhos(){
         var cabecalho = JSON.stringify({
             "codigo": null,
             "chaveacessopedido": null,
-            "datavenda": "2000-01-01",
+            "datavenda": ano + "-" + mes + "-" + dia,
             "desconto": "0.00",
             "empresa": 1,
             "garcom": 1,
-            "hora": "08:00:00",
+            "hora": h + ":" + m + ":" + s,
             "id_cliente": 1,
             "id_vendedor": 1,
             "numero_nfce": null,
@@ -48,6 +49,7 @@
                     idCabecalho = data[tamanho - 1].codigo + 1;
                     itens(idCabecalho);
                     apagar();
+                    window.location.replace("http://15.228.157.169:9091/end");
                 })
             }
         })
@@ -61,7 +63,7 @@
                 "id": null,
                 "acrescimo": "0.00",
                 "cst_csosn": null,
-                "datavenda": null,
+                "datavenda": ano + "-" + mes + "-" + dia,
                 "desconto": "0.00",
                 "id_item": produtoID[i],
                 "id_venda": idCabecalho,
