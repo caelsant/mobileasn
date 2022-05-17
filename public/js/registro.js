@@ -48,7 +48,12 @@ var s = now.getSeconds();
                     var tamanho = data.length;
                     idCabecalho = data[tamanho - 1].codigo + 1;
                     itens(idCabecalho);
-                    apagar();
+                    localStorage.removeItem("ID");
+                    localStorage.removeItem("VALOR");
+                    localStorage.setItem("ID", '[1]')
+                    localStorage.setItem("VALOR", '[20]')
+                    window.location.reload();
+                    produtosAdicionados()
                     window.location.replace("http://15.228.157.169:9091/end");
                 })
             }
