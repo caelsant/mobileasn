@@ -24,6 +24,7 @@ const { stringify } = require("querystring");
 app.get("/", (req,res) => {
     res.render("index")
 })
+/*
 
 app.get("/api/produtos", (req, res) => {
     tables.usuarios.findAll().then((element) => {
@@ -42,7 +43,7 @@ app.get("/api/cabecalho", (req, res) => {
         res.json(element)
     })
 })
-
+*/
 app.post("/itens", (req,res) => {
     tables.itens.create({
 		"id": req.body.id,
