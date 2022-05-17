@@ -1,9 +1,9 @@
 var Sequelize = require("sequelize");
 
 var banco = new Sequelize(
-    "asnmobile",
-    "root",
-    "6632",
+    "mobileasn",
+    "admin",
+    "66325489",
     {
         host: "localhost",
         dialect: "mysql",
