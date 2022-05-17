@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 9090;
 const path = require('path');
 const bodyParser = require("body-parser");
 const db = require("./models/db");
@@ -91,4 +90,6 @@ app.get("/end", (req,res) => {
     res.render("finish")
 })
 
-app.listen(port)
+app.listen(9091, () => {
+	console.log("Conectado: 9091" );
+})
