@@ -12,6 +12,7 @@ app.use(bodyParser.json())
 //EJS e a ViewEngine do projeto
 const ejs = require("ejs");
 const { stringify } = require("querystring");
+const { table } = require("console");
     app.set("view engine", "ejs");
     app.set('views', './views');
 //Configurações do EJS ^^^
@@ -96,19 +97,19 @@ app.get("/end", (req,res) => {
 //api
 
 app.get("/api/produtos", (req, res) => {
-    tabela.usuarios.findAll().then((element) => {
+    tables.usuarios.findAll().then((element) => {
         res.json(element)
     })
 })
 
 app.get("/api/itens", (req, res) => {
-    tabela.itens.findAll().then((element) => {
+    tables.itens.findAll().then((element) => {
         res.json(element)
     })
 })
 
 app.get("/api/cabecalho", (req, res) => {
-    tabela.cabecalho.findAll().then((element) => {
+    tables.cabecalho.findAll().then((element) => {
         res.json(element)
     })
 })
