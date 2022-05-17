@@ -40,7 +40,7 @@ function adicionar(id, valor){
     function produtosAdicionados(){
         var output;
         for (let p = 0; p < produtoID.length; p++) {
-            $.getJSON("http://15.228.157.169:9099/produtos", function(data){
+            $.getJSON("http://15.228.157.169:9090/api/produtos", function(data){
             var busca = $(data)
             .filter(function (i,n){
             return n.codigo == produtoID[p];

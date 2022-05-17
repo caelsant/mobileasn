@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 9091;
+const port = 9090;
 const path = require('path');
 const bodyParser = require("body-parser");
 const db = require("./models/db");
 const tables = require("./models/tables")
+const cors = require("cors")
+app.use(cors())
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -21,6 +23,24 @@ const { stringify } = require("querystring");
 //ROTAS
 app.get("/", (req,res) => {
     res.render("index")
+})
+
+app.get("/api/produtos", (req, res) => {
+    tables.usuarios.findAll().then((element) => {
+        res.json(element)
+    })
+})
+
+app.get("/api/itens", (req, res) => {
+    tables.itens.findAll().then((element) => {
+        res.json(element)
+    })
+})
+
+app.get("/api/cabecalho", (req, res) => {
+    tables.cabecalho.findAll().then((element) => {
+        res.json(element)
+    })
 })
 
 app.post("/itens", (req,res) => {
