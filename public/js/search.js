@@ -10,7 +10,7 @@ $(document).ready(function(){
             $("#getSearch").hide();
             var search = $("#search").val().toLowerCase();;
             var regex = new RegExp(search, 'i');
-            $.getJSON("http://15.228.157.169:9091/produtos", function(data){
+            $.getJSON("http://15.228.157.169:9099/produtos", function(data){
             var output;
                 $.each(data, function(key, value){
                     if ((value.nome.search(regex) != -1) || (value.ean.search(regex) != -1)) {

@@ -43,7 +43,7 @@
                 console.log("Cadastrado");
             },
             error: (error) => {
-                $.getJSON("http://15.228.157.169:9090/cabecalho", function(data){
+                $.getJSON("http://15.228.157.169:9099/cabecalho", function(data){
                     var tamanho = data.length;
                     idCabecalho = data[tamanho - 1].codigo + 1;
                     itens(idCabecalho);
