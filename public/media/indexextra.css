@@ -1,0 +1,297 @@
+:root{
+    --corPrincipal: #FFB63D;
+    --corSecundaria: #00598A;
+    --secondShadow: #001825;
+    --corGreen: #55896A;
+    --transparentC: #1F1D1D;
+}
+
+
+body{
+    background-color: var(--corPrincipal);
+    font-family: 'Roboto', sans-serif;
+}
+
+#head{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background-color: var(--corPrincipal);
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+#head i{
+    position: relative;
+    font-size: 38px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFB63D;
+}
+
+#head #cabecalho{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 25%;
+  background-color: transparent;  
+}
+
+#cabecalho h1{
+    position: relative;
+    float: left;
+    top: 50%;
+    transform: translateY(-100%);
+    font-size: 30px;
+    color: white;
+}
+
+#head #user-icon{
+    position: relative;
+    float: left;
+    width: 10%;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2%;
+    margin-right: 4%;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+
+#head #garbage-icon, #out-icon{
+    position: relative;
+    float: right;
+    width: 10%;
+    height: 65%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2%;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#garbage-icon{
+    margin-right: 3%;
+}
+
+#head h2{
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin: 2% 0% 5% 0%;
+    color: white;
+}
+
+#head input{
+    position: relative;
+    width: 90%;
+    padding: 3%;
+    left: 5%;
+    border-radius: 50px;
+    border: none;
+    font-size: 30px;
+}
+
+#body{
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    background-color: white;
+    left: 0;
+    top: 25%;
+    border-radius: 50px 50px 0px 0px;
+    overflow: hidden;
+}
+
+#output-search{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: none;
+}
+
+#getSearch{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: show;
+}
+
+#tbody-get tr:first-child{
+    display: none;
+}
+
+#output-search table{
+    position: relative;
+    width: 100%;
+    left: 0%;
+    border: none;
+}
+
+#output-search th{
+    padding: 2%;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border: none;
+}
+
+#output-search td{
+    padding: 2%;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    border: none;
+}
+
+#output-search input{
+    margin: 0;
+    position: relative;
+    width: 80%;
+    padding: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+#output-search button{
+    margin: 0;
+    position: relative;
+    width: 80%;
+    padding: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--corGreen);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
+#table-wrapp{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-color: transparent;
+    overflow: scroll;
+}
+
+#getSearch table{
+    position: relative;
+    width: 100%;
+    left: 0%;
+    border: none;
+}
+
+#getSearch th{
+    position: relative;
+    padding: 2%;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border: none;
+}
+
+#getSearch td{
+    padding: 2%;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    border: none;
+}
+
+#getSearch input{
+    margin: 0;
+    position: relative;
+    width: 80%;
+    padding: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+#save{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    color: black;
+    z-index: 1;
+}
+
+#save #save-head{
+    background-color: transparent;
+    position: relative;
+    float: left;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+    width: 90%;
+    height: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid var(--transparentC);
+}
+
+#save #total-inf{
+    position: relative;
+    background-color: transparent;
+    width: 50%;
+    float: left;
+    margin: 0;
+    font-size: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#save #total-out{
+    position: relative;
+    background-color: transparent;
+    width: 50%;
+    float: right;
+    margin: 0;
+    font-size: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+#getSearch button{
+    margin: 0;
+    position: relative;
+    width: 90%;
+    padding: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--corGreen);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
