@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const app = express();
 const path = require('path');
@@ -16,6 +17,7 @@ const { stringify } = require("querystring");
 //Configurações do EJS ^^^
 //Executar JSON
     app.use(express.json())
+	app.use(cors())
     app.use(express.static('public'));
 //ROTAS
 app.get("/", (req,res) => {
