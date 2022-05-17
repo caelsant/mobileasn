@@ -34,7 +34,7 @@
         })
     
         $.ajax({
-            url: "http://192.168.0.104:1011/cabecalho",
+            url: "http://15.228.157.169:9091/cabecalho",
             type: "POST",
             dataType: "json",
             contentType: "application/json",
@@ -43,7 +43,7 @@
                 console.log("Cadastrado");
             },
             error: (error) => {
-                $.getJSON("http://192.168.0.104:1010/cabecalho", function(data){
+                $.getJSON("http://15.228.157.169:9090/cabecalho", function(data){
                     var tamanho = data.length;
                     idCabecalho = data[tamanho - 1].codigo + 1;
                     itens(idCabecalho);
@@ -79,7 +79,7 @@
             
                     })
                     $.ajax({
-                    url: "http://192.168.0.104:1011/itens",
+                    url: "http://15.228.157.169:9091/itens",
                     type: "POST",
                     dataType: "json",
                     contentType: "application/json",
