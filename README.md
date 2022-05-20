@@ -17,6 +17,5 @@ npm i --save sequelize
 npm i --save mysql2
 npm i --save cors
 npm i --save body-parser
-npm i --save qu
 
 # alterações pra por no ar #

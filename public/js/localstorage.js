@@ -12,8 +12,8 @@ function adicionar(id, valor){
     if (tamanhoArray > 0) {
         produtoID[tamanhoArray] = id
         produtoValor[tamanhoArray] = valor;
-        produtoQuantidade[tamanhoArray] = quantidadeiNPUT;
-        produtoValorTotal[tamanhoArray] = valor * quantidadeiNPUT;
+        produtoQuantidade[tamanhoArray] = Number(quantidadeiNPUT);
+        produtoValorTotal[tamanhoArray] = Number(valor * quantidadeiNPUT);
         localStorage.setItem("ID", JSON.stringify(produtoID))
         localStorage.setItem("VALOR", JSON.stringify(produtoValor))
         localStorage.setItem("Quantidade", JSON.stringify(produtoQuantidade))
@@ -21,13 +21,14 @@ function adicionar(id, valor){
         } else {
         produtoID[tamanhoArray] = id
         produtoValor[tamanhoArray] = valor;
-        produtoQuantidade[tamanhoArray] = quantidadeiNPUT;
-        produtoValorTotal[tamanhoArray] = valor * quantidadeiNPUT;
+        produtoQuantidade[tamanhoArray] = Number(quantidadeiNPUT);
+        produtoValorTotal[tamanhoArray] = Number(valor * quantidadeiNPUT);
         localStorage.setItem("ID", JSON.stringify(produtoID))
         localStorage.setItem("VALOR", JSON.stringify(produtoValor))
         localStorage.setItem("Quantidade", JSON.stringify(produtoQuantidade))
         localStorage.setItem("ValorTotal", JSON.stringify(produtoValorTotal))
         }
+        quantidadeiNPUT = 1;
         $("#output-search").hide();
         $("#getSearch").show();
         
@@ -82,7 +83,7 @@ function produtosAdicionados(){
     somas();
 }
 
-function remover (item) {
+function remover(item) {
     delete produtoID[item]
     for (let i = 0;i  < produtoID.length; i++) {
         if (typeof produtoID[i] == "undefined") {
@@ -106,6 +107,10 @@ function apagar() {
     localStorage.removeItem("VALOR");
     localStorage.removeItem("Quantidade");
     localStorage.removeItem("ValorTotal");
+    localStorage.setItem("ID", "['']")
+    localStorage.setItem("VALOR", "[0]")
+    localStorage.setItem("Quantidade", "[0]")
+    localStorage.setItem("ValorTotal", "[0]")
     window.location.reload();
 }
 
@@ -121,7 +126,7 @@ $("#feito-out").click(() => {
 
 
  async function somas(){
-    for (let i = 0; i < produtoValor.length; i++) {
+    for (let i = 1; i < produtoValor.length; i++) {
         soma += produtoValorTotal[i];
     }
     $("#total-out").html("R$" + soma.toFixed(2))

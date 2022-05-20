@@ -17,11 +17,13 @@ function mudar() {
 
 $(document).ready(function(){
     $('#search').keyup(function(){
+
         if(!$(this).val()){
             $("#output-search").hide();
             $("#getSearch").show();
             
         } else{
+
             $("#output-search").show();
             $("#getSearch").hide();
             var search = $("#search").val().toLowerCase();;
@@ -36,7 +38,7 @@ $(document).ready(function(){
                     output += "<td id='"+ i +"'>" + data[i].codigo + "</td>";
                     output += "<td>" + data[i].nome + "</td>";
                     output += "<td>" + data[i].valorvenda + "</td>";
-                    output += "<td>"+ "<input class='quantidade' type='text' onchange='mudar(" + i + ")' value='1'>" + "</td>";
+                    output += "<td>"+ "<input class='quantidade' type='number' onchange='mudar(" + ")' value='1'>" + "</td>";
                     output += "<td><button type='submit'" + "onclick='adicionar(" + Number(data[i].codigo) + "," + Number(data[i].valorvenda) +")'" + "><i class='fa-solid fa-plus'></i></button></td>";
                     output += "</tr>";
 
