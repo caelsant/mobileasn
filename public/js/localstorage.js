@@ -126,7 +126,7 @@ $("#feito-out").click(() => {
 
 
  async function somas(){
-    for (let i = 1; i < produtoValor.length; i++) {
+    for (let i = 0; i < produtoValor.length; i++) {
         soma += produtoValorTotal[i];
     }
     $("#total-out").html("R$" + soma.toFixed(2))
