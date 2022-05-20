@@ -1,0 +1,637 @@
+:root{
+    --corPrincipal: #FFB63D;
+    --corSecundaria: #00598A;
+    --secondShadow: #001825;
+    --corGreen: #55896A;
+    --transparentC: #1F1D1D;
+}
+
+
+body{
+    background-color: var(--corPrincipal);
+    font-family: 'Roboto', sans-serif;
+}
+
+#head{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background-color: var(--corPrincipal);
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+#head i{
+    position: relative;
+    font-size: 38px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFB63D;
+}
+
+#head #cabecalho{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 30%;
+  background-color: transparent;  
+}
+
+#cabecalho h1{
+    position: relative;
+    float: left;
+    top: 50%;
+    transform: translateY(-100%);
+    font-size: 36px;
+    color: white;
+}
+
+#head #user-icon{
+    position: relative;
+    float: left;
+    width: 10%;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2%;
+    margin-right: 4%;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+
+#head #garbage-icon, #out-icon{
+    position: relative;
+    float: right;
+    width: 10%;
+    height: 65%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2%;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#garbage-icon{
+    margin-right: 3%;
+}
+
+#head h2{
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin: 2% 0% 5% 0%;
+    color: white;
+}
+
+
+.barcode{
+    position: relative;
+    float: right;
+    width: 15%;
+    right: 5%;
+    padding: 3% 0% 3% 0%;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+}
+
+
+
+#head input{
+    position: relative;
+    width: 70%;
+    padding: 3%;
+    left: 5%;
+    border-radius: 50px;
+    border: none;
+    font-size: 30px;
+}
+
+#body{
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    background-color: white;
+    left: 0;
+    top: 25%;
+    border-radius: 50px 50px 0px 0px;
+    overflow: hidden;
+}
+
+.remove{
+    background-color: red;
+}
+
+#output-search{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: none;
+}
+
+#getSearch{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: show;
+}
+
+
+
+#output-search table{
+    position: relative;
+    width: 100%;
+    left: 0%;
+    border: none;
+}
+
+#output-search th{
+    padding: 2%;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border: none;
+}
+
+#output-search td{
+    padding: 2%;
+    background-color: white;
+    color: black;
+    font-size: 35px;
+    border: none;
+}
+
+#output-search input{
+    margin: 0;
+    position: relative;
+    width: 80%;
+    padding: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+#tbody-get button{
+    margin: 0;
+    position: relative;
+    width: 80%;
+    padding: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(245, 61, 61);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#output-search button{
+    margin: 0;
+    position: relative;
+    width: 80%;
+    padding: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--corGreen);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
+#table-wrapp{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-color: transparent;
+    overflow: scroll;
+}
+
+#getSearch table{
+    position: relative;
+    width: 100%;
+    left: 0%;
+    border: none;
+}
+
+#getSearch th{
+    position: relative;
+    padding: 3%;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    border: none;
+}
+
+#getSearch td{
+    padding: 2%;
+    background-color: white;
+    color: black;
+    font-size: 35px;
+    border: none;
+}
+
+#getSearch input{
+    margin: 0;
+    position: relative;
+    width: 80%;
+    padding: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+#save{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    color: black;
+    z-index: 1;
+}
+
+#save #save-head{
+    background-color: transparent;
+    position: relative;
+    float: left;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+    width: 90%;
+    height: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid var(--transparentC);
+}
+
+#save #total-inf{
+    position: relative;
+    background-color: transparent;
+    width: 50%;
+    float: left;
+    margin: 0;
+    font-size: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#save #total-out{
+    position: relative;
+    background-color: transparent;
+    width: 50%;
+    float: right;
+    margin: 0;
+    font-size: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+#getSearch #salvar{
+    margin: 0;
+    position: relative;
+    width: 90%;
+    padding: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--corGreen);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
+
+.hide{
+    display: none;
+}
+
+/*BARRAS*/
+
+#conteiner-camera{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0;
+    background-color: #FFB63D;
+    display: none;
+}
+
+#codigo-barras-result{
+    display: none;
+}
+
+#camera-container{
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+}
+
+#camera{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+#codigo-container{
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    left: 0;
+    top: 60%;
+    background-color: transparent;
+}
+
+#codigo{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#codigo h1{
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+    font-size: 60px;
+}
+
+#item-container{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    left: 0;
+    top: 80%;
+    background-color: transparent;
+
+}
+
+#item-container table{
+    position: relative;
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#item-container input{
+    margin: 0;
+    position: relative;
+    width: 20%;
+    padding: 5%;
+    left: 10%;
+
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+
+
+#controles-container{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    gap: 10%;
+    width: 90%;
+    height: 5%;
+    left: 0;
+    top: 90%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 5%;
+}
+
+#controles-container button{
+    background-color: green;
+    border-radius: 15px;
+    color: white;
+    font-size: 25px;
+    margin-left: 5%;
+    border: none;
+}
+
+#controles-container button:first-child{
+    background-color: red;
+    color: white;
+    font-size: 25px;
+    border: none;
+}
+
+video{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    border-radius: 15px;
+}
+
+/*LOGIN*/
+
+
+#login-wrapp form h1{
+    font-size: 20px;
+    color: #F44336;
+    margin: 0% 0% 5% 0%;
+    padding: 0;
+}
+
+#login{
+    background-color: var(--corSecundaria);
+    font-family: 'Roboto', sans-serif;
+}
+
+#login-section section{
+    position: absolute;
+    background-color: var(--corSecundaria);
+    width: 100%;
+    height: 98%;
+    left: 0;
+    top: 0;
+}
+
+#logo{
+    background-color: transparent;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 30%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+#logo img{
+    position: relative;
+    width: 35%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#login-wrapp{
+    background-color: transparent;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 70%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+#login-wrapp h1{
+    font-size: 55px;
+    color: white;
+    margin: 10% 0% 5% 0%;
+    padding: 0;
+}
+
+#login-wrapp p{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#login-section input{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-flow: row wrap;
+    margin: 5% 0% 5% 0%;
+    width: 80%;
+    padding: 5%;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.active{
+    background-color: red;
+    color: white;
+}
+
+#login-section button{
+    position: relative;
+    margin: 0% 0% 5% 0%;
+    width: 60%;
+    padding: 5%;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 25px;
+    background-color: var(--corPrincipal);
+    color: white;
+}
+
+/*FIM*/
+
+
+#feito{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    text-align: center;
+    background-color: var(--corSecundaria);
+        font-family: 'Roboto', sans-serif;
+        z-index: 1;
+    display: none;
+}
+
+#feito div{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+}
+
+#feito div img{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+}
+
+#feito h1{
+    position: relative;
+    float: left;
+    width: 100%;
+    background-color: transparent;
+    font-size: 35px;
+    color: white;
+    margin-bottom: 8%;
+}
+
+#feito button{
+    position: relative;
+    float: left;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5%;
+    background-color: var(--corPrincipal);
+    font-size: 35px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+}

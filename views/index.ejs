@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/69197fd746.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="media/indexextra.css" media="(min-height: 0px)"/>
+        <link rel="stylesheet" href="media/indexsmal.css" media="(min-height: 300px)"/>
+        <link rel="stylesheet" href="media/index.css" media="(min-height: 700px)"/>
+        <link rel="stylesheet" href="media/indexover.css" media="(min-height:701px)"/>
+        <link rel="stylesheet" href="media/indexlarge.css" media="(min-height: 1500px)"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body onload="loading()">
+        <section id="head" >
+            <header id="cabecalho">
+                <div id="user-icon"><i class="fa-solid fa-user"></i></div>
+                <h1 id="user-name"></h1>
+                <div id="garbage-icon" onclick="apagar()"><i class="fa-solid fa-trash-can"></i></div>
+                <a href="/login"><div id="out-icon"><i class="fa-solid fa-right-from-bracket"></i></div></a>
+            </header>
+            <h2>Procure Por:<br>CODIGO DE BARRAS | NOME | CODIGO INTERNO</h2>
+            <input type="search" id="search" placeholder="Pesquise aqui"><button class="barcode"><i class="fa-solid fa-barcode"></i></button>
+        </section>
+        <section id="body" >
+            <div id="output-search">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width:30%">Id</th>
+                            <th>Produto</th>
+                            <th>Valor</th>
+                            <th style="width:15%">Qnt</th>
+                            <th style="width:20%">Adicionar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                       <!-- <tr>
+                            <td>02</td>
+                            <td>Roteador Wireless</td>
+                            <td>R$20,00</td>
+                            <td><input type="number" value="1"></td>
+                            <td><button type="submit"><i class="fa-solid fa-plus"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Roteador Wireless</td>
+                            <td>R$20,00</td>
+                            <td><input type="number" value="1"></td>
+                            <td><button type="submit"><i class="fa-solid fa-plus"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Roteador Wireless</td>
+                            <td>R$20,00</td>
+                            <td><input type="number" value="1"></td>
+                            <td><button type="submit"><i class="fa-solid fa-plus"></i></button></td>
+                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+            <div id="getSearch">
+                <div id="table-wrapp">
+                    <table>
+                    <thead>
+                        <th style="width: 10%;">Id</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                        <th>Remover</th>
+                    </thead>
+                    <tbody id="tbody-get">
+
+                    </tbody>
+                </table>
+                </div>
+               
+                <div id="save">
+                    <div id="save-head">
+                        <h1 id="total-inf">Total:</h1>
+                        <h1 id="total-out">R$0,00</h1>
+                    </div>
+                        <button type="submit" id="salvar">Salvar</input>
+                </div>
+            </div>
+        </section>
+    
+        <div id="conteiner-camera">
+            <section id="camera-container">
+                <div id="camera"></div>
+            </section>
+            <section id="codigo-container">
+                <div id="codigo">
+                    <h2>Codigo</h2>
+                    <h1 id="codigo-barras-wait">Procurando</h1>
+                    <h1 id="codigo-barras-result"></h1>
+                </div>
+            </section>
+            <section id="item-container">
+                <table id="table">
+                    <tbody id="body-code-item">
+
+                    </tbody>
+                </table>
+            </section>
+            <section id="controles-container">
+                <button id="out-barras">Sair</button>
+                <button id="add-barras">Adicionar</button>
+            </section>
+        </div>
+        <section id="feito">
+            <div id="logo">
+                <img src="img/asn-logo.png">
+            </div>
+            <h1>DADOS ENVIADOS<br> COM SUCESSO!!</h1>
+            <form>
+                <button id="feito-out">Voltar pra pagina inicial</button>
+            </form>
+        </section> 
+    </body>
+    <script>
+        var usuarioHost = localStorage.getItem("Usuario");
+        $("#user-name").html(usuarioHost);
+        $.getJSON("http://15.228.157.169:9091/api/vendedores", function(data){
+        var busca = $(data)
+        .filter(function (i,n){
+        return n.nome == usuarioHost;
+        });
+        localStorage.setItem("IdUser", busca[0].codigo)
+        })
+    </script>
+   <script src="js/localstorage.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/registro.js"></script>
+    <script src="js/quagga.js"></script>
+    <script src="js/barras.js"></script>
+    <script src="js/quaggascript.js"></script>
+</html>

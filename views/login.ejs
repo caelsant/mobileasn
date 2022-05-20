@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/login.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body id="login">
+        <section id="login-section">
+            <div id="logo">
+                <img src="img/asn-logo.png">
+            </div>
+            <div id="login-wrapp">
+                <h1>Login</h1>
+                <p>Por favor digite seu usuario e
+                    senha nos campos abaixo</p>
+                <form action="/notlogin" method="POST">
+                    <input type="text" class="active" name="usuario" id="usuario" placeholder="Digite seu usuario aqui">
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha aqui">
+                    <h1><%= not %></h1>
+                    <button type="submit" id="login" onclick="user()">Login</button>
+                </form>
+            </div>
+        </section>
+    <script>
+        var user = document.querySelector("#usuario").value;
+        function user() {
+            localStorage.setItem("Usuario", user)
+        }
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+:root{
+    --corPrincipal: #FFB63D;
+    --corSecundaria: #00598A;
+    --secondShadow: #001825;
+    --corGreen: #55896A;
+    --transparentC: #1F1D1D;
+}
+
+#feito{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    text-align: center;
+    background-color: var(--corSecundaria);
+        font-family: 'Roboto', sans-serif;
+        z-index: 1;
+    display: none;
+}
+
+#feito div{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+}
+
+#feito div img{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+}
+
+#feito h1{
+    position: relative;
+    float: left;
+    width: 100%;
+    background-color: transparent;
+    font-size: 35px;
+    color: white;
+    margin-bottom: 8%;
+}
+
+#feito button{
+    position: relative;
+    float: left;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5%;
+    background-color: var(--corPrincipal);
+    font-size: 35px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+}

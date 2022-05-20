@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body style="background-color: #FFB63D;" onload="setUser()">
+        <input type="text" style="display: none;" id="cael" value=<%= user %> >
+        <script>
+            async function setUser() {
+                var user = document.querySelector("#cael").value;
+                await localStorage.setItem("Usuario", user)
+                vai();
+            }
+            function vai() {
+                window.location.replace("/")
+            }
+        </script>
+    </body>
+</html>
